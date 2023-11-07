@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DataFLY UI</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="#">DataFLY Interface</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" id="dash-button" ><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" id="config-button"><i class="far fa-copy"></i>Configuration</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="ConfigurationDiv" class="hidden-div">
+        <form class="needs-validation" id="config-form" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomTestName">Test Name</label>
+                    <input type="text" class="form-control" name="validationCustomTestName"  id="validationCustomTestName" placeholder="Test Name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomVehicleName">Vehicle Name</label>
+                    <input type="text" class="form-control" name="validationCustomVehicleName" id="validationCustomVehicleName" placeholder="Vehicle Name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomVehicleReg">Vehicle Registration</label>
+                    <input type="text" class="form-control" name="validationCustomVehicleReg" id="validationCustomVehicleReg" placeholder="Vehicle Registration" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomCANBaudrate_1">CAN_1 Baudrate</label>
+                    <input type="number" class="form-control" name="validationCustomCANBaudrate_1" id="validationCustomCANBaudrate_1" placeholder="CAN Baudrate in Kbps" min="0" pattern="[0-9]+" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomCANBaudrate_2">CAN_2 Baudrate</label>
+                    <input type="number" class="form-control" name="validationCustomCANBaudrate_2" id="validationCustomCANBaudrate_2" placeholder="CAN Baudrate in Kbps" min="0" pattern="[0-9]+" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomMQTTAddress">MQTT Address</label>
+                    <input type="text" class="form-control" name="validationCustomMQTTAddress" id="validationCustomMQTTAddress" placeholder="MQTT Address" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomWiFiSSID">WiFi SSID</label>
+                    <input type="text" class="form-control" name="validationCustomWiFiSSID" id="validationCustomWiFiSSID" placeholder="WiFi SSID" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationCustomWiFiPassword">WiFi PASSWORD</label>
+                    <input type="password" class="form-control" name="validationCustomWiFiPassword" id="validationCustomWiFiPassword" placeholder="WiFi Password" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <ul class="list-group list-group-flush" id="data-loggers">
+        
+        <!-- <li class="list-group-item">
+            <div class="card" style="width : 100%">
+                <div class="card-body data-logger">
+                    <div class="d-flex align-items-center">
+                        <strong class="data-logger-name">Loading...</strong>
+                        <div class="spinner-grow text-primary ms-auto data-logger-state"role="status" aria-hidden="true"></div>
+                    </div>
+                    This is some text within a card body modified.
+                </div>
+            </div>
+        </li> -->
+
+        <!-- <li class="list-group-item">
+        <div class="card" style="width: 100%">
+            <div class="row g-0">
+            <div class="col-md-3">
+                <img src="https://store.citroen.fr/ami/images/preconfigs/P001/P001_ami_orange.png" class="card-img" alt="Your Image">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body data-logger">
+                <div class="d-flex align-items-center mb-3">
+                    <strong class="data-logger-name">Loading...</strong>
+                    <div class="spinner-grow text-primary ms-auto data-logger-state" role="status" aria-hidden="true"></div>
+                </div>
+                <p class="mb-3">This is some text within a card body modified.</p>
+                <button class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#collapseExample_1" aria-expanded="false" aria-controls="collapseExample">
+                    Show More
+                </button>
+                <div class="collapse mt-3" id="collapseExample_1">
+                    <div class="card card-body">
+                    Additional functionalities here...
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </li> -->
+    </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script type="module" src="sandbox.js"></script>
+    <script type="module" src="navbar.js"></script>
+    <script type="module" src="form_handle.js"></script>
+    <!-- Place the JavaScript code before the closing body tag -->
+    <script>
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Function to handle click events on navigation links
+        function handleNavLinkClick(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Get the target link's href attribute
+            const targetHref = event.target.getAttribute('href');
+
+            // Output the href for demonstration purposes
+            console.log('Clicked link: ' + targetHref);
+
+            // Perform any other actions you want to do when a navigation link is clicked
+            // For example, you could load content dynamically using AJAX or navigate to the link using window.location.href
+            // window.location.href = targetHref;
+        }
+
+        // Attach click event listeners to each navigation link
+        navLinks.forEach(link => {
+            link.addEventListener('click', handleNavLinkClick);
+        });
+    </script>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+        });
+    }, false);
+    })();
+    </script>
+
+</body>
+</html><!DOCTYPE html>

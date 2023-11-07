@@ -1,0 +1,1 @@
+This is the DATAFLY UI. A user interface associated with the DATAFLY project (check it on my github). A simple web interface that monitors the state of the data loggers and the associated vehicles wirelessly through MQTT protocol.
